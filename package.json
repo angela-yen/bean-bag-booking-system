@@ -39,7 +39,8 @@
   },
   "homepage": "https://github.com/harakeke-2022/Pluto#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
