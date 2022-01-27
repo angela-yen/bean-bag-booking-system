@@ -120,20 +120,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var data = [{
   id: 1,
-  product: 'Banana',
+  product: '',
   price: 3.59,
   notes: 'You can eat it or use it as a placeholder in your code'
-}, {
-  id: 2,
-  product: 'Turmeric',
-  price: 4.68,
-  notes: 'Super healthy, get it from Bin Inn'
-}, {
-  id: 3,
-  product: 'Beans',
-  price: 1.5,
-  notes: 'Buy in bulk if you have time to cook it, or canned from PakNSave'
-}];
+} // { id: 2, product: 'Turmeric', price: 4.68, notes: 'Super healthy, get it from Bin Inn' },
+// { id: 3, product: 'Beans', price: 1.5, notes: 'Buy in bulk if you have time to cook it, or canned from PakNSave' }
+];
 
 function App() {
   console.log('App rendered');
@@ -149,9 +141,9 @@ function App() {
     className: "title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: '/'
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My Todos App"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Beanbag Game"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/create"
-  }, "\u2795 Add"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+  }, "\u2795 Add Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "page"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Routes"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
@@ -162,11 +154,6 @@ function App() {
     path: "/create",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
       setList: setList
-    })
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/details/:id",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Details__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      products: list
     })
   }))));
 }
@@ -253,7 +240,7 @@ function Form(_ref) {
   var navigate = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useNavigate"])();
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    id: '',
+    // id: '',
     product: '',
     price: 0
   }),
@@ -269,33 +256,20 @@ function Form(_ref) {
     event.preventDefault();
 
     var updatedForm = _objectSpread(_objectSpread({}, form), {}, {
-      id: parseInt(form.id),
+      // id: parseInt(form.id),
       price: Number(form.price)
     });
 
     setList(function (currentList) {
       return [].concat(_toConsumableArray(currentList), [updatedForm]);
-    }); // setList(currentList => {
-    //   return [...currentList, form]
-    // })
-
+    });
     navigate('/');
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    name: "id",
-    value: form.id,
-    onChange: handleFormChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
     name: "product",
     value: form.name,
-    onChange: handleFormChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "number",
-    name: "price",
-    value: form.price,
     onChange: handleFormChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: handleClick
@@ -330,11 +304,7 @@ function List(_ref) {
   }, 0);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col"
-  }, "PRODUCT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col"
-  }, "PRICE"), products.map(function (_ref2) {
+  }, products.map(function (_ref2) {
     var product = _ref2.product,
         price = _ref2.price,
         id = _ref2.id;
@@ -342,14 +312,8 @@ function List(_ref) {
       className: "col"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/details/".concat(id)
-    }, product)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "col"
-    }, '$', price));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col"
-  }, "TOTAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col"
-  }, '$', total));
+    }, product)));
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (List);

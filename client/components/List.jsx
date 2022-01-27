@@ -8,16 +8,16 @@ function List ({ products }) {
 
   return (
     <div className='table'>
-      <div className='col'>PRODUCT</div>
-      <div className='col'>PRICE</div>
+      {/* <div className='col'>PRODUCT</div>
+      <div className='col'>PRICE</div> */}
       {products.map(({ product, price, id }) =>
         <>
           <div className='col'><Link to={`/details/${id}`}>{product}</Link></div>
-          <div className='col'>{'$'}{price}</div>
+          {/* <div className='col'>{'$'}{price}</div> */}
         </>
       )}
-      <div className='col'>TOTAL</div>
-      <div className='col'>{'$'}{total}</div>
+      {/* <div className='col'>TOTAL</div> */}
+      {/* <div className='col'>{'$'}{total}</div> */}
     </div>
   )
 }
