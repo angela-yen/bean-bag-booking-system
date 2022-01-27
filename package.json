@@ -1,14 +1,8 @@
 {
-  "name": "Bean bag",
-  "version": "0.1.1",
-  "description": "Friday group project Pluto group.",
-  "repository": "https://github.com/harakeke-20/Pluto",
-  "main": "server/index.js",
-  "keywords": [
-    ""
-  ],
-  "author": "EDA",
-  "license": "ISC",
+  "name": "pluto",
+  "version": "1.0.0",
+  "description": "friday project",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --config client/webpack.config.js",
     "start": "node server",
@@ -34,6 +28,16 @@
       "bundle.js"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harakeke-2022/Pluto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harakeke-2022/Pluto/issues"
+  },
+  "homepage": "https://github.com/harakeke-2022/Pluto#readme",
   "dependencies": {
     "express": "^4.17.1"
   },
