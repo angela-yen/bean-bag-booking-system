@@ -3,13 +3,15 @@ import Pixel from './Pixel'
 
 const App = () => {
   return (
-    Array.from({ length: 100 }, () => [
-      <Pixel />,
-      <Pixel />,
-      <Pixel />,
-      <Pixel />,
-      <Pixel />
-    ])
+    <div>
+      {/* <Form /> */}
+      <div className='grid'>
+        {Array.from({ length: 30 }, (_, i) => [
+          <Pixel key={i} name='' />
+        ])}
+      </div>
+      <span> <button onClick={Pixel}>Click to re-arrange</button></span>
+    </div>
   )
 }
 

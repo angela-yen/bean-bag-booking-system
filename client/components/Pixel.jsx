@@ -1,28 +1,25 @@
 import React, { useState } from 'react'
 
-function Pixel () {
-  const randomHexColor = () =>
-  `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+const bagColor = ['#0000ff', '#ffb6c1', '#87ceeb', '#ffff00', '#8b0000', '#ff0000', '#8b0000', '#8b0000', '#0000ff', '#0000ff']
 
-  const [paint, setStyle] = useState('#ff6347')
+function generateBagColor(bagColor) {
+  return bagColor[Math.floor(Math.random() * bagColor.length)]
+}
 
-  function clickHandler () {
-    setStyle(randomHexColor())
-  }
-  function handleMouseEnter () {
-    setStyle('#66CDAA')
-  }
-  function doubleClickHandler () {
-    setStyle('#ffffff')
+export default function Pixel(props) {
+  const [style, setStyle] = useState({ backgroundColor: generateBagColor(bagColor), height: '100px', width: '100px' })
+
+  const [name, setName] = useState('')
+
+  function handleClick() {
+    console.log('clicked')
+    setName(props.name)
   }
 
   return (
-
-    <div onClick= {clickHandler} onMouseEnter={handleMouseEnter} onDoubleClick={doubleClickHandler} style ={{ height: 50, width: 50, backgroundColor: paint }}>
-
+    // making the div clickable
+    <div style={style} onClick={handleClick}>
+      {name}
     </div>
-
   )
 }
-
-export default Pixel
