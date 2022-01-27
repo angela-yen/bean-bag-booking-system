@@ -5,9 +5,7 @@ function Form ({ setList }) {
   const navigate = useNavigate()
 
   const [form, setForm] = useState({
-    // id: '',
-    product: '',
-    price: 0
+    product: ''
   })
 
   function handleFormChange (event) {
@@ -22,7 +20,6 @@ function Form ({ setList }) {
 
     const updatedForm = {
       ...form,
-      // id: parseInt(form.id),
       price: Number(form.price)
     }
     setList(currentList => [...currentList, updatedForm])
@@ -31,10 +28,8 @@ function Form ({ setList }) {
 
   return (
     <form>
-      {/* <input type="text" name="id" value={form.id} onChange={handleFormChange} /> */}
       <input type="text" name="product" value={form.name} onChange={handleFormChange} />
-      {/* <input type="number" name="price" value={form.price} onChange={handleFormChange} /> */}
-      <button onClick={handleClick}>Add</button>
+      <button onClick={handleClick}>Submit</button>
     </form>
   )
 }
