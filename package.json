@@ -1,11 +1,11 @@
 {
-  "name": "broken-kaleidoscope",
+  "name": "Bean bag",
   "version": "0.1.1",
-  "description": "Playing with random colours and React state.",
-  "repository": "https://github.com/dev-academy-challenges/broken-kaleidoscope",
+  "description": "Friday group project Pluto group.",
+  "repository": "https://github.com/harakeke-20/Pluto",
   "main": "server/index.js",
   "keywords": [
-    "frontend"
+    ""
   ],
   "author": "EDA",
   "license": "ISC",
