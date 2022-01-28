@@ -46,14 +46,30 @@ a {
   margin-top: 30px;
 } */
 
+.apple {
+  text-align: center;
+  font-size: 85px;
 
+}
+
+.magic {
+  color: #8873cf;
+  margin-top: 65px;
+}
+
+.tree{
+  text-align: center;
+  color: #8873cf;
+  padding: 30px;
+  margin-top: 85px;
+}
 
   
 body {
   font-family: 'Reenie Beanie', cursive;
   background: #f0bb75df;
   -webkit-font-smoothing: antialiased;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 *{
@@ -87,8 +103,16 @@ h2{
 
 
 a {
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
+    font-size: 40px;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap
 }
 
 

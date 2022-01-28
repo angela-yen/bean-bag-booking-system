@@ -1,28 +1,22 @@
 import React, { useState } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
-import Form from './Form'
-import List from './List'
+import Pixel from './Pixel'
 
-const data = [
-  { id: 1, product: '', price: 3.59, notes: 'You can eat it or use it as a placeholder in your code' }
-]
-
-function App () {
+function App() {
   console.log('App rendered')
-  const [list, setList] = useState(data)
+  const [name, setName] = useState('')
   return (
-    <main className='app'>
-      <header className='title'>
-        <Link to={'/'}><h1>Beanbag Game</h1></Link>
-      </header>
-      <Link to='/create'> 🐢 Your Name:</Link>
-      <section className='page'>
-        <Routes>
-          <Route path='/' element={<List products={list} />} />
-          <Route path='/create' element={<Form setList={setList} />} />
-        </Routes>
-      </section>
-    </main>
+    <>
+      <div>
+
+        <h1 className='apple'>Beanbag Booking System 👀</h1>
+        <div className='grid'>
+          {Array.from({ length: 30 }, (_, i) => [
+            <Pixel key={i} name={name} />
+          ])}
+        </div>
+      </div>
+
+    </>
   )
 }
 

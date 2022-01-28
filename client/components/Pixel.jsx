@@ -1,28 +1,46 @@
 import React, { useState } from 'react'
 
-function Pixel () {
-  const randomHexColor = () =>
-  `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+const bagColor = ['#0000ff', '#ffb6c1', '#87ceeb', '#ffff00', '#8b0000', '#ff0000', '#8b0000', '#8b0000', '#0000ff', '#0000ff']
 
-  const [paint, setStyle] = useState('#ff6347')
+function generateBagColor(bagColor) {
+  return bagColor[Math.floor(Math.random() * bagColor.length)]
+}
 
-  function clickHandler () {
-    setStyle(randomHexColor())
+export default function Pixel(props) {
+  const style = {
+    backgroundColor: generateBagColor(bagColor),
+    height: '300px',
+    width: '300px',
+    borderRadius: '125px',
+    border: '2px',
+    padding: '20px',
+    margin: '20px'
   }
-  function handleMouseEnter () {
-    setStyle('#66CDAA')
+
+  const [name, setName] = useState('')
+
+  const [toggle, setToggle] = useState(false)
+
+  function handleClick() {
+    setToggle(!toggle)
   }
-  function doubleClickHandler () {
-    setStyle('#ffffff')
+
+  function handleFormChange(event) {
+    console.log(event.target.value)
+    setName(event.target.value)
   }
 
   return (
-
-    <div onClick= {clickHandler} onMouseEnter={handleMouseEnter} onDoubleClick={doubleClickHandler} style ={{ height: 50, width: 50, backgroundColor: paint }}>
-
+    // making the div clickable
+    <div style={style} onDoubleClick={handleClick}>
+      {(toggle)
+        ? <>
+          <h1 className='magic'> 🐢 Your Name: </h1>
+          <input type="text" name="name" value={name} onChange={handleFormChange} />
+          <button onClick={handleClick}>Submit</button>
+        </>
+        : <h1 className='tree'>{name}</h1>
+      }
     </div>
-
   )
 }
-
-export default Pixel
