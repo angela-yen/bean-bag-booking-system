@@ -112,6 +112,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var bagColor = ['#0000ff', '#ffb6c1', '#87ceeb', '#ffff00', '#8b0000', '#ff0000', '#8b0000', '#8b0000', '#0000ff', '#0000ff'];
+
+function generateBagColor(bagColor) {
+  return bagColor[Math.floor(Math.random() * bagColor.length)];
+}
 
 function App() {
   console.log('App rendered');
@@ -130,7 +135,8 @@ function App() {
   }, function (_, i) {
     return [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pixel__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: i,
-      name: name
+      name: name,
+      color: generateBagColor(bagColor)
     })];
   }))));
 }
@@ -164,15 +170,9 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-var bagColor = ['#0000ff', '#ffb6c1', '#87ceeb', '#ffff00', '#8b0000', '#ff0000', '#8b0000', '#8b0000', '#0000ff', '#0000ff'];
-
-function generateBagColor(bagColor) {
-  return bagColor[Math.floor(Math.random() * bagColor.length)];
-}
-
 function Pixel(props) {
   var style = {
-    backgroundColor: generateBagColor(bagColor),
+    backgroundColor: props.color,
     height: '300px',
     width: '300px',
     borderRadius: '125px',
