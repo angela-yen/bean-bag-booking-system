@@ -2,12 +2,15 @@
   "name": "bean-bag",
   "version": "0.1.1",
   "description": "Friday group project Pluto group.",
-  "repository": "https://github.com/harakeke-20/Pluto",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harakeke-2022/Pluto.git"
+  },
   "main": "server/index.js",
   "keywords": [
     ""
   ],
-  "author": "EDA",
+  "author": "",
   "license": "ISC",
   "scripts": {
     "build": "webpack --config client/webpack.config.js",
@@ -34,8 +37,13 @@
       "bundle.js"
     ]
   },
+  "bugs": {
+    "url": "https://github.com/harakeke-2022/Pluto/issues"
+  },
+  "homepage": "https://github.com/harakeke-2022/Pluto#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -51,8 +59,8 @@
     "jest": "^26.1.0",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
