@@ -2,6 +2,14 @@
 
 A beanbag booking system where you can double click on the beanbags, write your name on it and have it stored on the bag of your desires! If you refresh the page you will see that the beanbags will randomise in colour!
 
+To check it out, install npm packages then run. 
+```
+npm install
+```
+```
+npm run dev
+```
+
 ## Creators
 This app was created by 4 people in a single day group project to consolidate our learning for react. 
 
