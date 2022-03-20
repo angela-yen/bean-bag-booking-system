@@ -1,4 +1,12 @@
-# Pluto!
-:smiling_face_with_three_hearts:
+# Beanbag Booking System 
 
-[IMG_20220130_122023](https://user-images.githubusercontent.com/93649055/151680771-90ecb48c-cca0-44bc-aeea-7d005f9bb79d.jpg)
+A beanbag booking system where you can double click on the beanbags, write your name on it and have it stored on the bag of your desires! If you refresh the page you will see that the beanbags will randomise in colour!
+
+## Creators
+This app was created by 4 people in a single day group project to consolidate our learning for react. 
+
+The team was broken up into pairs and we used pair programming to create each the componenets and bring them together. 
+
+### Reflection 
+
+This was a fun experience for us and it taught us a lot of about the importance of communication especially while intergrating the different compoenent. We did run into an issue where one of the componenet was broken and a lot of changes had to be made. To resolve this issue, we decided to do the intergration and changes together as a group in a mob coding style. 
